@@ -1,5 +1,6 @@
 import React from "react";
 import { CheckIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 
 export default function Plans({ plans }) {
   return (
@@ -14,7 +15,7 @@ export default function Plans({ plans }) {
               Two plans, but not one wrong choice
             </p>
             <p className="text-xl text-gray-300">
-              Trust me when I tell you, "You won't regret subscribing"
+              {`Trust me when I tell you, "You won't regret subscribing"`}
             </p>
           </div>
         </div>
@@ -64,12 +65,11 @@ export default function Plans({ plans }) {
         </div>
       </div>
       <div className="px-4 bg-white mb-24 pt-12">
-        <a
-          className="rounded lg:w-1/2 text-center mx-auto block shadow-lg bg-red-400 hover:bg-red-100 transition-all hover:text-red-600 text-gray-50 text-xl py-4"
-          href="/api/signup"
-        >
-          Become a member today
-        </a>
+        <Link href="/api/signup">
+          <a className="rounded lg:w-1/2 text-center mx-auto block shadow-lg bg-red-400 hover:bg-red-100 transition-all hover:text-red-600 text-gray-50 text-xl py-4">
+            Become a member today
+          </a>
+        </Link>
       </div>
     </div>
   );

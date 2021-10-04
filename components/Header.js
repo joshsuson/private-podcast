@@ -39,18 +39,16 @@ export default function Header() {
         <div className="mt-4 lg:mt-0">
           {!user && (
             <div className="flex">
-              <a
-                href="/api/auth/login"
-                className="block rounded p-3 mr-3 border-2 border-red-400 text-red-400 hover:border-red-100 hover:bg-red-100 hover:text-red-600"
-              >
-                Login
-              </a>
-              <a
-                href="/api/signup?returnTo=/members"
-                className="block bg-red-400 hover:bg-red-100 border-2 border-red-400 hover:border-red-100 hover:text-red-600 text-white p-3 rounded"
-              >
-                Become a Member
-              </a>
+              <Link href="/api/auth/login">
+                <a className="block rounded p-3 mr-3 border-2 border-red-400 text-red-400 hover:border-red-100 hover:bg-red-100 hover:text-red-600">
+                  Login
+                </a>
+              </Link>
+              <Link href="/api/signup?returnTo=/members">
+                <a className="block bg-red-400 hover:bg-red-100 border-2 border-red-400 hover:border-red-100 hover:text-red-600 text-white p-3 rounded">
+                  Become a Member
+                </a>
+              </Link>
             </div>
           )}
           {user && (
@@ -62,12 +60,11 @@ export default function Header() {
               >
                 Manage Membership
               </button>
-              <a
-                href="/api/auth/logout"
-                className="bg-red-400 block w-full text-center md:inline md:w-auto hover:bg-red-100 border-2 border-red-400 hover:border-red-100 hover:text-red-600 text-white p-3 rounded"
-              >
-                Logout
-              </a>
+              <Link href="/api/auth/logout">
+                <a className="bg-red-400 block w-full text-center md:inline md:w-auto hover:bg-red-100 border-2 border-red-400 hover:border-red-100 hover:text-red-600 text-white p-3 rounded">
+                  Logout
+                </a>
+              </Link>
             </div>
           )}
         </div>

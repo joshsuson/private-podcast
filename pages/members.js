@@ -56,7 +56,7 @@ export default withPageAuthRequired(function MembersPage({ plans }) {
     const { data: user } = await axios.get("/api/get-user");
     user.is_subscribed ? setSubscribed(true) : setSubscribed(false);
     setLoading(false);
-  });
+  }, []);
   return (
     <div>
       {loading && (
