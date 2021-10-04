@@ -17,8 +17,8 @@ export default function Cancelled() {
         </a>
       </Link>
       <p className="text-xl mb-12 text-center">
-        If this wasn't done by mistake, we are sorry to see you decided not to
-        subscribe. Would you mind{" "}
+        {`If this wasn't done by mistake, we are sorry to see you decided not to
+        subscribe. Would you mind`}{" "}
         <a
           className="text-red-400 hover:text-red-600 hover:underline"
           href="mailto: josh.suson@gmail.com"
