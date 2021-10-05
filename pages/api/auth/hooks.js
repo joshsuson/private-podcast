@@ -45,6 +45,7 @@ module.exports = async (req, res) => {
       );
     } else {
       console.log("You didn't send your secret");
+      console.log(secret);
     }
   } catch (err) {
     console.error(err);
