@@ -1,5 +1,6 @@
 import Airtable from "airtable";
 import initStripe from "stripe";
+import axios from "axios";
 
 const stripe = initStripe(process.env.STRIPE_SECRET_KEY);
 
@@ -27,24 +28,38 @@ module.exports = async (req, res) => {
         stripe_id: customer.id,
       };
 
-      base("users").create(
-        {
-          fields: {
-            Name: name,
-            Email: email,
-            auth0_id: id,
-            stripe_id: customer.id,
-          },
-        },
-
-        (err, record) => {
-          if (err) {
-            console.error(err.message);
-            return;
+      await axios
+        .post(
+          `https://api.airtable.com/v0/appRGUPY0qUZE0Dcj/users`,
+          { fields: data },
+          {
+            headers: {
+              Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
+              "Content-Type": "application/json",
+            },
           }
-          console.log(record.getId());
-        }
-      );
+        )
+        .then((data) => console.log(data))
+        .catch((err) => console.error(err));
+
+      // base("users").create(
+      //   {
+      //     fields: {
+      //       Name: name,
+      //       Email: email,
+      //       auth0_id: id,
+      //       stripe_id: customer.id,
+      //     },
+      //   },
+
+      //   (err, record) => {
+      //     if (err) {
+      //       console.error(err.message);
+      //       return;
+      //     }
+      //     console.log(record.getId());
+      //   }
+      // );
     } else {
       console.log("You didn't send your secret");
     }
