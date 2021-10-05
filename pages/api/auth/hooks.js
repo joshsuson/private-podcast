@@ -32,19 +32,19 @@ module.exports = async (req, res) => {
       console.log(records);
 
       base("users").create(
-        [
-          {
-            fields: data,
-          },
-        ],
-        (err, records) => {
+        {
+          Name: name,
+          Email: email,
+          auth0_id: id,
+          stripe_id: customer.id,
+        },
+
+        (err, record) => {
           if (err) {
-            console.error(err);
+            console.error(err.message);
             return;
           }
-          records.forEach((record) => {
-            console.log(record.getId());
-          });
+          console.log(record.getId());
         }
       );
     } else {
