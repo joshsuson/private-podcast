@@ -21,6 +21,6 @@ This is a podcasting membership platform I've built as a showcase of connected t
 The site operates in test mode for stripe so you can use the card details below to subscribe:
 
 4242 4242 4242 4242  
-12/25
-123
+12/25  
+123  
 Any Zip Code
