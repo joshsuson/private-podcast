@@ -29,10 +29,12 @@ module.exports = async (req, res) => {
 
       base("users").create(
         {
-          Name: name,
-          Email: email,
-          auth0_id: id,
-          stripe_id: customer.id,
+          fields: {
+            Name: name,
+            Email: email,
+            auth0_id: id,
+            stripe_id: customer.id,
+          },
         },
 
         (err, record) => {
