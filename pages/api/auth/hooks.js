@@ -15,13 +15,10 @@ module.exports = async (req, res) => {
     const { name, email, id, secret } = req.body;
 
     if (secret === process.env.AUTH0_HOOK_SECRET) {
-      console.log("stripe customer creation");
-      console.log(stripe);
       const customer = await stripe.customers.create({
         name,
         email,
       });
-      console.log("finish stripe customer creation");
 
       const data = {
         Name: name,
@@ -29,6 +26,9 @@ module.exports = async (req, res) => {
         auth0_id: id,
         stripe_id: customer.id,
       };
+
+      console.log(data);
+      console.log(base);
 
       base("users").create(
         [
