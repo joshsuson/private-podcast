@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
       };
 
       console.log(data);
-      console.log(base("users").list());
+      console.log(base("users").select().all());
 
       base("users").create(
         [
