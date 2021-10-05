@@ -28,7 +28,8 @@ module.exports = async (req, res) => {
       };
 
       console.log(data);
-      console.log(base("users").select().all());
+      const records = await base("users").select().all();
+      console.log(records);
 
       base("users").create(
         [
