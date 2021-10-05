@@ -27,10 +27,6 @@ module.exports = async (req, res) => {
         stripe_id: customer.id,
       };
 
-      console.log(data);
-      const records = await base("users").select().all();
-      console.log(records);
-
       base("users").create(
         {
           Name: name,
