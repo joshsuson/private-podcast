@@ -14,3 +14,13 @@ This is a podcasting membership platform I've built as a showcase of connected t
 - Stripe - Using stripe to manage payments and subscriptions
 - Airtable - Using airtable as a database to connect auth0 users with stripe customers
 - Transistor.fm - Transistor is the actual private podcasting service. They have a simple API that allowed me to automatically add/remove subscribers as people changed their subscription status through stripe.
+- Netlify - Deployed site to netlify using serveless functions for the backend.
+
+## Testing Site
+
+The site operates in test mode for stripe so you can use the card details below to subscribe:
+
+4242 4242 4242 4242  
+12/25
+123
+Any Zip Code
